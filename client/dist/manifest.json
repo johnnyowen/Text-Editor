@@ -37,5 +37,5 @@
   "display": "standalone",
   "start_url": "/",
   "description": "A PWA text editor",
-  "background_color": "#000000"
+  "background_color": "#00aaff"
 }

@@ -27,12 +27,15 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === "navigate", pageCache);
 
-// TODO: Implement asset caching
 registerRoute(
-  ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
+  // takes in a single request parameter and checks if the request.destination matches any of the values in the array
+  ({ request }) => ["style", "script", "worker"].includes(request.destination),
+  // a caching strategy provided by the workbox-strategies module that delivers cached data while trying to connect to the network to update the cached data
   new StaleWhileRevalidate({
-    cacheName: 'asset-cache',
+    // sets the name of the cache to "asset-cache"
+    cacheName: "asset-cache",
     plugins: [
+      // allows only requests with status codes 0 (which might indicate a failed request) and 200 (OK) will be cached
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),

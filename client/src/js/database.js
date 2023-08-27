@@ -12,24 +12,31 @@ const initdb = async () =>
     },
   });
 
-export const putDb = async (content) => {
-  console.log('PUT to the database');
-  const todosDb = await openDB('jate', 1);
-  const tx = todosDb.transaction('jate', 'readwrite');
-  const store = tx.objectStore('jate');
+export const putDb = async (id, content) => {
+  // opens our database called jate, version 1
+  const jateDb = await openDB("jate", 1);
+  // starts a transaction on the jate database with ability to read and write data
+  const txt = jateDb.transaction("jate", "readwrite");
+  // this is where our data will be stored
+  const store = txt.objectStore("jate");
+  // creates a put requestwithin the object's transaction store
   const request = store.put({ id: id, content: content });
+  // if the request is successful, the updated data is stored in the result variable
   const result = await request;
-  console.log('Data saved to the database', result);
 };
 
 export const getDb = async () => {
-  console.log('GET from the database');
-  const indexedDb = await openDB('jate', 1);
-  const tx = indexedDb.transaction('jate', 'readonly');
-  const store = tx.objectStore('jate');
+  // opens our database called jate, version 1
+  const indexedDb = await openDB("jate", 1);
+  // starts a transaction on the jate database with ability to read data
+  const txt = indexedDb.transaction("jate", "readonly");
+  // this is where our data will be stored
+  const store = txt.objectStore("jate");
+  // creates a get request to get the data with the key 1 from the object store
   const request = store.get(1);
+  // if the request is successful, the data is returned in the result variable
   const result = await request;
-  console.log(`result.value`, result);
+  // returns the value of result if there is data, if there is no data, null or undefined is returned
   return result?.value;
 };
 
