@@ -27,6 +27,18 @@ This repo is licensed under the MIT license. Click on the badge above for more i
 If there is any questions feel free to contact me through [GitHub](https://github.com/johnnyowen)
 
 ## Demo
+Deployed app:
+https://jate-jeo-60d2cb5eea82.herokuapp.com/
 
-🚧 coming soon 🚧 
-:)
+Screenshot(ss) of app
+![Screenshot 2023-08-27 140411](https://github.com/johnnyowen/Text-Editor/assets/127053240/f023d49a-0863-4fd1-9230-d5f2b6ab255f)
+
+ss of manifest
+![Screenshot 2023-08-27 140519](https://github.com/johnnyowen/Text-Editor/assets/127053240/ac38d684-e55a-43af-9987-f1befd502835)
+
+ss of service workers
+![Screenshot 2023-08-27 140541](https://github.com/johnnyowen/Text-Editor/assets/127053240/601db1de-1f79-4a1c-9d70-d79854b8c4c0)
+
+ss of indexed DB
+![Screenshot 2023-08-27 140600](https://github.com/johnnyowen/Text-Editor/assets/127053240/0399cf49-7424-4fdf-9c6e-2249ec3adea8)
+
